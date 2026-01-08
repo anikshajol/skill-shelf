@@ -6,7 +6,7 @@
     "level": "Beginner",
     "duration": "10 hours",
     "description": "Learn the foundation of the web by understanding HTML elements, semantic tags, accessibility basics, and proper document structure used in real-world websites.",
-    "thumbnail": "https://i.ibb.co/4YB8YvB/html.png"
+    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "level": "Beginner",
     "duration": "14 hours",
     "description": "Master modern CSS including Flexbox, Grid, responsive layouts, media queries, and best practices to build mobile-first, responsive websites.",
-    "thumbnail": "https://i.ibb.co/x5R9QfJ/css.png"
+    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "level": "Intermediate",
     "duration": "18 hours",
     "description": "Understand JavaScript fundamentals such as variables, functions, scope, arrays, objects, loops, async programming, and DOM manipulation.",
-    "thumbnail": "https://i.ibb.co/z6wZ1w4/javascript.png"
+    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "level": "Intermediate",
     "duration": "20 hours",
     "description": "Learn how to build component-based user interfaces using React, JSX, props, state, hooks, and basic performance optimization techniques.",
-    "thumbnail": "https://i.ibb.co/LZ5H4XQ/react.png"
+    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "level": "Intermediate",
     "duration": "8 hours",
     "description": "Build clean, consistent, and responsive user interfaces rapidly using Tailwind CSS utility classes and modern design practices.",
-    "thumbnail": "https://i.ibb.co/0ZK0ZbX/tailwind.png"
+    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "level": "Intermediate",
     "duration": "16 hours",
     "description": "Learn how to create backend servers using Node.js and Express, handle routes, middleware, REST APIs, and basic error handling.",
-    "thumbnail": "https://i.ibb.co/Fzv4wY0/node.png"
+    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "level": "Intermediate",
     "duration": "12 hours",
     "description": "Understand NoSQL databases, CRUD operations, schema design, and how to integrate MongoDB with backend applications.",
-    "thumbnail": "https://i.ibb.co/7W0gYkK/mongodb.png"
+    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "level": "Beginner",
     "duration": "9 hours",
     "description": "Implement secure authentication using Firebase including email-password login, Google sign-in, auth persistence, and protected routes.",
-    "thumbnail": "https://i.ibb.co/J5pZP0Y/firebase.png"
+    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "level": "Intermediate",
     "duration": "10 hours",
     "description": "Learn how to connect frontend applications with REST APIs, handle async data fetching, error states, and loading indicators.",
-    "thumbnail": "https://i.ibb.co/0rKZcQk/api.png"
+    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
   },
   {
     "id": 10,
@@ -87,6 +87,6 @@
     "level": "Advanced",
     "duration": "7 hours",
     "description": "Improve website performance by optimizing assets, reducing bundle size, lazy loading components, and following best practices.",
-    "thumbnail": "https://i.ibb.co/6BrFZ9d/performance.png"
+    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
   }
 ]
