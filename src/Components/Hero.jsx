@@ -9,7 +9,7 @@ const Hero = () => {
           <img
             src="https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_960_720.jpg"
             alt=""
-            className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
+            className="object-contain rounded-2xl h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128"
           />
         </div>
         <div className="flex flex-col justify-center p-6 text-center rounded-sm lg:max-w-md xl:max-w-lg lg:text-left">
@@ -20,9 +20,9 @@ const Hero = () => {
             </span>
           </h1>
           <p className="mt-6 mb-8 text-lg sm:mb-12">
-            Dictum aliquam porta in condimentum ac integer
+            Skill Learning is waiting for you.{" "}
             <br className="hidden md:inline lg:hidden" />
-            turpis pulvinar, est scelerisque ligula sem
+            Don't waste your time.
           </p>
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             <Link
