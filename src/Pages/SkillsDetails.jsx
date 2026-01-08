@@ -18,13 +18,13 @@ const SkillsDetails = () => {
   return (
     <div className="card bg-base-100 w-1/2 mx-auto shadow-sm">
       <figure>
-        <img src={skills.thumbnail} alt="Shoes" />
+        <img src={skills.thumbnail} alt={skills.title} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{skills.title}</h2>
         <p>{skills.description}</p>
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">
+          <button className="btn">
             <FaBookmark />
           </button>
         </div>
