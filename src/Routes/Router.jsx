@@ -7,6 +7,8 @@ import Login from "../Pages/Login";
 import NotFound from "../Pages/NotFound";
 import Loader from "../Components/Loader";
 import SkillsDetails from "../Pages/SkillsDetails";
+import Register from "../Pages/Register";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -23,13 +25,25 @@ export const router = createBrowserRouter([
       },
       {
         path: "/skills/:id",
-        element: <SkillsDetails />,
+        element: (
+          <PrivateRoute>
+            <SkillsDetails />
+          </PrivateRoute>
+        ),
         loader: () => fetch(`/skills.json`),
         hydrateFallbackElement: <Loader />,
       },
 
-      { path: "/dashboard", element: <Dashboard /> },
+      {
+        path: "/dashboard",
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
+      },
       { path: "/login", element: <Login /> },
+      { path: "/register", element: <Register /> },
     ],
   },
 ]);

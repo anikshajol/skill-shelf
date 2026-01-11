@@ -8,12 +8,12 @@ const HomeSkills = () => {
       .then((res) => res.json())
       .then((data) => setSkills(data));
   }, []);
-  console.log(skills);
+  // console.log(skills);
 
   return (
     <div className="grid grid-cols-1 gap-2 md:grid-cols-3 w-11/12 mx-auto">
       {skills.slice(0, 3).map((skill) => (
-        <SkillCard skill={skill} />
+        <SkillCard key={skill.id} skill={skill} />
       ))}
     </div>
   );
