@@ -12,6 +12,7 @@ import { auth } from "../firebase/firebase.config";
 const Provider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState("");
+  const [search, setSearch] = useState("");
   const signUpUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -40,6 +41,8 @@ const Provider = ({ children }) => {
   }, []);
 
   const userInfo = {
+    search,
+    setSearch,
     logOut,
     signUpUser,
     user,

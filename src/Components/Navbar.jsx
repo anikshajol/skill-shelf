@@ -6,7 +6,7 @@ import Loader from "./Loader";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
-  const { user, logOut, loading } = useContext(AuthContext);
+  const { user, logOut, loading, search, setSearch } = useContext(AuthContext);
   // const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const link = (
@@ -22,11 +22,7 @@ const Navbar = () => {
                 isActive ? "btn btn-accent" : "btn "
               }
             >
-              {loading ? (
-                <span className="loading loading-spinner"></span>
-              ) : (
-                "Home"
-              )}
+              Home
             </NavLink>
           </li>
           <li>
@@ -36,11 +32,7 @@ const Navbar = () => {
                 isActive ? "btn btn-accent" : "btn"
               }
             >
-              {loading ? (
-                <span className="loading loading-spinner"></span>
-              ) : (
-                "Skill"
-              )}
+              Skill
             </NavLink>
           </li>
           {user && (
@@ -51,11 +43,7 @@ const Navbar = () => {
                   isActive ? "btn btn-accent" : "btn "
                 }
               >
-                {loading ? (
-                  <span className="loading loading-spinner"></span>
-                ) : (
-                  "Dashboard"
-                )}
+                Dashboard
               </NavLink>
             </li>
           )}
@@ -102,6 +90,16 @@ const Navbar = () => {
         </div>
 
         <div className="navbar-end">
+          <div className="mr-2">
+            <input
+              type="text"
+              className="input "
+              required
+              placeholder="search"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </div>
           {!user ? (
             <Link to={"/login"} className="btn">
               Login
