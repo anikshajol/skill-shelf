@@ -2,9 +2,13 @@ import { Link } from "react-router";
 
 const SkillCard = ({ skill }) => {
   return (
-    <div className="card bg-base-100 w-96 shadow-sm">
-      <figure>
-        <img src={skill.thumbnail} alt={skill.title} />
+    <div className="card bg-base-100w-96 shadow-sm">
+      <figure className="h-80">
+        <img
+          className="h-full object-cover w-full rounded-md"
+          src={skill.thumbnail}
+          alt={skill.title}
+        />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{skill?.title}</h2>

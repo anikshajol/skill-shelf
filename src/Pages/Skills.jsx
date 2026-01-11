@@ -11,7 +11,7 @@ const Skills = () => {
   return (
     <div className="w-11/12 mx-auto">
       <h2 className="py-3 text-2xl font-semibold">Skills Set</h2>
-      <div className="grid grid-cols-1 gap-2 md:grid-cols-2 lg:grid-cols-3 ">
+      <div className="grid grid-cols-1 pb-6 gap-2 md:grid-cols-2 lg:grid-cols-3 ">
         {visibleSkills.map((skill) => (
           <SkillCard key={skill.id} skill={skill} />
         ))}

@@ -11,7 +11,7 @@ const HomeSkills = () => {
   console.log(skills);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 w-11/12 mx-auto">
+    <div className="grid grid-cols-1 gap-2 md:grid-cols-3 w-11/12 mx-auto">
       {skills.slice(0, 3).map((skill) => (
         <SkillCard skill={skill} />
       ))}

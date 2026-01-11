@@ -6,7 +6,7 @@
     "level": "Beginner",
     "duration": "10 hours",
     "description": "Learn the foundation of the web by understanding HTML elements, semantic tags, accessibility basics, and proper document structure used in real-world websites.",
-    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
+    "thumbnail": "https://i.ibb.co.com/kgyfw4NN/HTML-Blog-Cover.jpg"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "level": "Beginner",
     "duration": "14 hours",
     "description": "Master modern CSS including Flexbox, Grid, responsive layouts, media queries, and best practices to build mobile-first, responsive websites.",
-    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
+    "thumbnail": "https://images.pexels.com/photos/11035386/pexels-photo-11035386.jpeg"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "level": "Intermediate",
     "duration": "18 hours",
     "description": "Understand JavaScript fundamentals such as variables, functions, scope, arrays, objects, loops, async programming, and DOM manipulation.",
-    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
+    "thumbnail": "https://images.pexels.com/photos/4709285/pexels-photo-4709285.jpeg"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "level": "Intermediate",
     "duration": "20 hours",
     "description": "Learn how to build component-based user interfaces using React, JSX, props, state, hooks, and basic performance optimization techniques.",
-    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
+    "thumbnail": "https://images.pexels.com/photos/11035471/pexels-photo-11035471.jpeg"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "level": "Intermediate",
     "duration": "8 hours",
     "description": "Build clean, consistent, and responsive user interfaces rapidly using Tailwind CSS utility classes and modern design practices.",
-    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
+    "thumbnail": "https://images.pexels.com/photos/11035368/pexels-photo-11035368.jpeg"
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "level": "Intermediate",
     "duration": "16 hours",
     "description": "Learn how to create backend servers using Node.js and Express, handle routes, middleware, REST APIs, and basic error handling.",
-    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
+    "thumbnail": "https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg"
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "level": "Intermediate",
     "duration": "12 hours",
     "description": "Understand NoSQL databases, CRUD operations, schema design, and how to integrate MongoDB with backend applications.",
-    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
+    "thumbnail": "https://i.ibb.co.com/bgVQj6QX/mongodb.png"
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "level": "Beginner",
     "duration": "9 hours",
     "description": "Implement secure authentication using Firebase including email-password login, Google sign-in, auth persistence, and protected routes.",
-    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
+    "thumbnail": "https://i.ibb.co.com/Zz6VqPFy/firebase.png"
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "level": "Intermediate",
     "duration": "10 hours",
     "description": "Learn how to connect frontend applications with REST APIs, handle async data fetching, error states, and loading indicators.",
-    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
+    "thumbnail": "https://images.pexels.com/photos/11035481/pexels-photo-11035481.jpeg"
   },
   {
     "id": 10,
@@ -87,6 +87,6 @@
     "level": "Advanced",
     "duration": "7 hours",
     "description": "Improve website performance by optimizing assets, reducing bundle size, lazy loading components, and following best practices.",
-    "thumbnail": "https://austingil.com/wp-content/uploads/HTML-Blog-Cover.svg"
+    "thumbnail": "https://i.ibb.co.com/LDXXksb2/Web-Performance-Optimization.png"
   }
 ]
