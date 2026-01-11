@@ -48,6 +48,18 @@ const Navbar = () => {
                 Dashboard
               </NavLink>
             </li>
+          )}{" "}
+          {user && (
+            <li>
+              <NavLink
+                to={"/saved-skills"}
+                className={({ isActive }) =>
+                  isActive ? "btn btn-accent" : "btn "
+                }
+              >
+                Saved Skills
+              </NavLink>
+            </li>
           )}
         </>
       )}

@@ -10,7 +10,7 @@ const Skills = () => {
   const visibleSkills = data.slice(0, visible);
   // console.log(data);
   const { state } = useNavigation();
-  console.log(state);
+  // console.log(state);
 
   const { search } = useContext(AuthContext);
   const filteredSkills = visibleSkills.filter((skill) =>

@@ -9,11 +9,13 @@ import {
 } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
 import useTheme from "../hooks/useTheme";
+import { getFromLocalStorage } from "../utilities/localstorage";
 
 const Provider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState("");
   const [search, setSearch] = useState("");
+  const [saveSkill, setSaveSkill] = useState(() => getFromLocalStorage());
 
   const signUpUser = (email, password) => {
     setLoading(true);
@@ -41,7 +43,11 @@ const Provider = ({ children }) => {
     });
     return () => unSubscribe();
   }, []);
+  // useEffect(() => {
+  //   const skills = getFromLocalStorage();
 
+  //   setSaveSkill(skills);
+  // }, []);
   const { theme, toggleTheme } = useTheme();
 
   const userInfo = {
@@ -55,6 +61,8 @@ const Provider = ({ children }) => {
     loading,
     setLoading,
     loginUser,
+    saveSkill,
+    setSaveSkill,
   };
 
   return (

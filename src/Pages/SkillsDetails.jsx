@@ -1,19 +1,41 @@
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { FaBookmark } from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router";
+import { AuthContext } from "../Context/Context";
+import {
+  addToLocalStorage,
+  getFromLocalStorage,
+} from "../utilities/localstorage";
 
 const SkillsDetails = () => {
-  const [skills, setSkills] = useState([]);
+  // const [skills, setSkills] = useState([]);
   const { id } = useParams();
   const data = useLoaderData();
+  const { setSaveSkill, saveSkill } = useContext(AuthContext);
+  // const [bookmarked, setBookmarked] = useState(false);
   //   console.log(id);
   //   console.log(skills);
-  useEffect(() => {
-    const skillData = data.find(
-      (skill) => parseFloat(skill.id) === parseFloat(id)
-    );
-    setSkills(skillData);
-  }, [data, id]);
+  // useEffect(() => {
+  //   const skillData = data.find(
+  //     (skill) => parseFloat(skill.id) === parseFloat(id)
+  //   );
+  //   setSkills(skillData);
+  // }, [data, id]);
+
+  const skills = data.find((skill) => Number(skill.id) === Number(id));
+  // setSaveSkill(skills);
+
+  const handleSaveSkill = () => {
+    // console.log("click", skills.id);
+    const skill = {
+      id: skills.id,
+      title: skills.title,
+      photo: skills.thumbnail,
+    };
+    addToLocalStorage(skill);
+    setSaveSkill(getFromLocalStorage());
+  };
+  const bookmarked = saveSkill.some((item) => item.id == skills.id);
 
   return (
     <div className="card bg-base-100 w-1/2 mx-auto shadow-sm">
@@ -24,8 +46,8 @@ const SkillsDetails = () => {
         <h2 className="card-title">{skills.title}</h2>
         <p>{skills.description}</p>
         <div className="card-actions justify-end">
-          <button className="btn">
-            <FaBookmark />
+          <button onClick={handleSaveSkill} className="btn">
+            {bookmarked ? <FaBookmark color="red" /> : <FaBookmark />}
           </button>
         </div>
       </div>

@@ -9,6 +9,7 @@ import Loader from "../Components/Loader";
 import SkillsDetails from "../Pages/SkillsDetails";
 import Register from "../Pages/Register";
 import PrivateRoute from "./PrivateRoute";
+import SavedSkills from "../Pages/SavedSkills";
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +40,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <Dashboard />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/saved-skills",
+        element: (
+          <PrivateRoute>
+            <SavedSkills />
           </PrivateRoute>
         ),
       },
