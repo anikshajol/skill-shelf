@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
 import { IoIosMenu } from "react-icons/io";
 import { Link, NavLink, useNavigate } from "react-router";
-import { AuthContext } from "../Context/Context";
+import { AuthContext, ThemeContext } from "../Context/Context";
 import Loader from "./Loader";
 import toast from "react-hot-toast";
+import { FaToggleOff, FaToggleOn } from "react-icons/fa6";
 
 const Navbar = () => {
   const { user, logOut, loading, search, setSearch } = useContext(AuthContext);
   // const [loading, setLoading] = useState(false);
+  const { theme, toggleTheme } = useContext(ThemeContext);
   const navigate = useNavigate();
   const link = (
     <>
@@ -109,6 +111,13 @@ const Navbar = () => {
               Logout
             </Link>
           )}
+          <div onClick={toggleTheme} className="px-2 cursor-pointer">
+            {theme == "light" ? (
+              <FaToggleOff size={30} />
+            ) : (
+              <FaToggleOn size={30} />
+            )}
+          </div>
         </div>
       </div>
     </nav>

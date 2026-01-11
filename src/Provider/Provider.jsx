@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AuthContext } from "../Context/Context";
+import { AuthContext, ThemeContext } from "../Context/Context";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -8,11 +8,13 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../firebase/firebase.config";
+import useTheme from "../hooks/useTheme";
 
 const Provider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState("");
   const [search, setSearch] = useState("");
+
   const signUpUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -40,6 +42,8 @@ const Provider = ({ children }) => {
     return () => unSubscribe();
   }, []);
 
+  const { theme, toggleTheme } = useTheme();
+
   const userInfo = {
     search,
     setSearch,
@@ -53,7 +57,11 @@ const Provider = ({ children }) => {
     loginUser,
   };
 
-  return <AuthContext value={userInfo}>{children}</AuthContext>;
+  return (
+    <ThemeContext value={{ theme, toggleTheme }}>
+      <AuthContext value={userInfo}>{children}</AuthContext>
+    </ThemeContext>
+  );
 };
 
 export default Provider;
