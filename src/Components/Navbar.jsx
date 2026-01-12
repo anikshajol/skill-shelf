@@ -5,66 +5,55 @@ import { AuthContext, ThemeContext } from "../Context/Context";
 import Loader from "./Loader";
 import toast from "react-hot-toast";
 import { FaToggleOff, FaToggleOn } from "react-icons/fa6";
+import useSearch from "../hooks/useSearch";
 
 const Navbar = () => {
-  const { user, logOut, loading, search, setSearch } = useContext(AuthContext);
+  const { user, logOut, loading } = useContext(AuthContext);
   // const [loading, setLoading] = useState(false);
   const { theme, toggleTheme } = useContext(ThemeContext);
   const navigate = useNavigate();
+  const { search, setSearch } = useSearch();
   const link = (
     <>
-      {loading ? (
-        <span className="loading loading-spinner"></span>
-      ) : (
-        <>
-          <li>
-            <NavLink
-              to={"/"}
-              className={({ isActive }) =>
-                isActive ? "btn btn-accent" : "btn "
-              }
-            >
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to={"/skills"}
-              className={({ isActive }) =>
-                isActive ? "btn btn-accent" : "btn"
-              }
-            >
-              Skill
-            </NavLink>
-          </li>
-          {user && (
-            <li>
-              <NavLink
-                to={"/dashboard"}
-                className={({ isActive }) =>
-                  isActive ? "btn btn-accent" : "btn "
-                }
-              >
-                Dashboard
-              </NavLink>
-            </li>
-          )}{" "}
-          {user && (
-            <li>
-              <NavLink
-                to={"/saved-skills"}
-                className={({ isActive }) =>
-                  isActive ? "btn btn-accent" : "btn "
-                }
-              >
-                Saved Skills
-              </NavLink>
-            </li>
-          )}
-        </>
+      <li>
+        <NavLink
+          to={"/"}
+          className={({ isActive }) => (isActive ? "btn btn-accent" : "btn ")}
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to={"/skills"}
+          className={({ isActive }) => (isActive ? "btn btn-accent" : "btn")}
+        >
+          Skill
+        </NavLink>
+      </li>
+      {user && (
+        <li>
+          <NavLink
+            to={"/dashboard"}
+            className={({ isActive }) => (isActive ? "btn btn-accent" : "btn ")}
+          >
+            Dashboard
+          </NavLink>
+        </li>
+      )}
+      {user && (
+        <li>
+          <NavLink
+            to={"/saved-skills"}
+            className={({ isActive }) => (isActive ? "btn btn-accent" : "btn ")}
+          >
+            Saved Skills
+          </NavLink>
+        </li>
       )}
     </>
   );
+
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -75,11 +64,13 @@ const Navbar = () => {
         console.log(err.message);
       });
   };
-
   if (loading) {
-    return <Loader />;
+    return (
+      <nav className="flex justify-center">
+        <span className="loading  loading-spinner"></span>
+      </nav>
+    );
   }
-
   return (
     <nav>
       <div className="navbar bg-base-100 shadow-sm">

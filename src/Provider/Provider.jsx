@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { AuthContext, ThemeContext } from "../Context/Context";
+import { AuthContext, SearchContext, ThemeContext } from "../Context/Context";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -13,7 +13,7 @@ import { getFromLocalStorage } from "../utilities/localstorage";
 
 const Provider = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(null);
   const [search, setSearch] = useState("");
   const [saveSkill, setSaveSkill] = useState(() => getFromLocalStorage());
 
@@ -51,8 +51,6 @@ const Provider = ({ children }) => {
   const { theme, toggleTheme } = useTheme();
 
   const userInfo = {
-    search,
-    setSearch,
     logOut,
     signUpUser,
     user,
@@ -67,7 +65,9 @@ const Provider = ({ children }) => {
 
   return (
     <ThemeContext value={{ theme, toggleTheme }}>
-      <AuthContext value={userInfo}>{children}</AuthContext>
+      <SearchContext value={{ search, setSearch }}>
+        <AuthContext value={userInfo}>{children}</AuthContext>
+      </SearchContext>
     </ThemeContext>
   );
 };

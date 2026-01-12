@@ -9,7 +9,7 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const { loginUser, user } = useContext(AuthContext);
-  const [loading, setLoading] = useState(false);
+  const [btnLoading, setBtnLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   console.log(user);
@@ -22,12 +22,12 @@ const Login = () => {
     const password = form.password.value;
     console.log(email, password);
     // setError("");
-    setLoading(true);
+    setBtnLoading(true);
     loginUser(email, password)
       .then((res) => {
         console.log(res.user);
         toast.success("Login successfully");
-        setLoading(false);
+        setBtnLoading(false);
         navigate(location?.state || "/");
       })
       .catch((err) => {
@@ -76,7 +76,7 @@ const Login = () => {
               <a className="link link-hover">Forgot password?</a>
             </div>
             <button className="btn btn-neutral mt-4">
-              {loading ? (
+              {btnLoading ? (
                 <span className="loading loading-spinner loading-xs"></span>
               ) : (
                 "Login"

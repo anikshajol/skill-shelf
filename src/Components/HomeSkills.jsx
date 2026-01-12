@@ -1,15 +1,23 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SkillCard from "./SkillCard";
-import { AuthContext } from "../Context/Context";
+import useSearch from "../hooks/useSearch";
+import Loader from "./Loader";
 
 const HomeSkills = () => {
   const [skills, setSkills] = useState([]);
-  const { search } = useContext(AuthContext);
+  const { search } = useSearch();
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetch("/skills.json")
       .then((res) => res.json())
-      .then((data) => setSkills(data));
+      .then((data) => {
+        setSkills(data);
+        setLoading(false);
+      });
   }, []);
+  if (loading) {
+    return <Loader />;
+  }
   // console.log(skills);
 
   const filteredSkills = skills.filter((skill) =>

@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { AuthContext } from "../Context/Context";
+import useAuth from "../hooks/useAuth";
 
 const Dashboard = () => {
-  const { user, saveSkill } = useContext(AuthContext);
+  const { user, saveSkill } = useAuth();
   // console.log(user);
   const lastLogin = new Date(
     user?.metadata?.lastSignInTime
@@ -13,8 +14,8 @@ const Dashboard = () => {
 
   return (
     <div className="w-1/2 mx-auto text-center">
-      <h2 className="text-2xl font-bold">{user.displayName}</h2>
-      <p>{user.email}</p>
+      <h2 className="text-2xl font-bold">{user?.displayName}</h2>
+      <p>{user?.email}</p>
       <p>Last Login: {lastLogin}</p>
       <p>Created At: {creationDate}</p>
       <p>Save Skills: {saveSkill.length}</p>

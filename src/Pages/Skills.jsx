@@ -1,18 +1,18 @@
-import React, { useContext, useState } from "react";
-import { useLoaderData, useNavigation } from "react-router";
+import React, { useState } from "react";
+import { useLoaderData } from "react-router";
 import SkillCard from "../Components/SkillCard";
 import { AuthContext } from "../Context/Context";
 import Loader from "../Components/Loader";
+import useSearch from "../hooks/useSearch";
 
 const Skills = () => {
   const data = useLoaderData();
   const [visible, setVisible] = useState(6);
   const visibleSkills = data.slice(0, visible);
   // console.log(data);
-  const { state } = useNavigation();
   // console.log(state);
 
-  const { search } = useContext(AuthContext);
+  const { search } = useSearch();
   const filteredSkills = visibleSkills.filter((skill) =>
     skill.title.toLowerCase().includes(search.toLowerCase())
   );
