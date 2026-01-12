@@ -3,7 +3,7 @@ import { AuthContext } from "../Context/Context";
 // import toast from "react-hot-toast";
 
 const Register = () => {
-  const { signUpUser, updateUser, loading } = useContext(AuthContext);
+  const { signUpUser, updateUser, loading, setUser } = useContext(AuthContext);
 
   const [error, setError] = useState("");
   const handleRegister = (e) => {
@@ -17,11 +17,12 @@ const Register = () => {
     try {
       signUpUser(email, password)
         .then((res) => {
-          console.log(res.user);
+          // console.log(res.user);
           const profile = { displayName: name };
           updateUser(profile)
             .then(() => {
               // profile Update
+              setUser(res.user);
             })
             .catch((err) => {
               console.log(err);
