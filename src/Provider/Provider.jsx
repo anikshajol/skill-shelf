@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import { AuthContext, SearchContext, ThemeContext } from "../Context/Context";
 import {
   createUserWithEmailAndPassword,
+  GoogleAuthProvider,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signInWithPopup,
   signOut,
   updateProfile,
 } from "firebase/auth";
@@ -16,7 +18,7 @@ const Provider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [search, setSearch] = useState("");
   const [saveSkill, setSaveSkill] = useState(() => getFromLocalStorage());
-
+  const googleProvider = new GoogleAuthProvider();
   const signUpUser = (email, password) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
@@ -35,6 +37,8 @@ const Provider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  const loginWithGoogle = () => signInWithPopup(auth, googleProvider);
+
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log(user);
@@ -51,6 +55,7 @@ const Provider = ({ children }) => {
   const { theme, toggleTheme } = useTheme();
 
   const userInfo = {
+    loginWithGoogle,
     logOut,
     signUpUser,
     user,
